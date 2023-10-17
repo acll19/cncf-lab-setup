@@ -21,3 +21,8 @@ module "subnet" {
   network_id    = module.network.id
   ip_cidr_block = var.network_ip_cidr_block
 }
+
+module "firewall" {
+  source       = "./modules/firewall"
+  network_name = module.network.name
+}
